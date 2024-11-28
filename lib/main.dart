@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/bloc/quiz_bloc.dart';
+import 'package:quiz_app/bloc/quiz/quiz_bloc.dart';
+import 'package:quiz_app/bloc/user/user_cubit.dart';
 import 'package:quiz_app/theme/colors.dart';
 import 'package:quiz_app/ui/home_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,8 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => QuizBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => QuizBloc(),
+        ),
+        BlocProvider(
+          create: (context) => UserCubit()..fetchUserData(),
+        ),
+      ],
       child: MaterialApp(
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),

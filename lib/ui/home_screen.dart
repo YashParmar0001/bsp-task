@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quiz_app/bloc/quiz_bloc.dart';
+import 'package:quiz_app/bloc/quiz/quiz_bloc.dart';
 import 'package:quiz_app/theme/colors.dart';
 import 'package:quiz_app/theme/texts.dart';
 import 'package:quiz_app/ui/quiz/quiz_screen.dart';
