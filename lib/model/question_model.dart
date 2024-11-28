@@ -57,4 +57,22 @@ class QuestionModel {
       answer: map['answer'] as String,
     );
   }
+
+  factory QuestionModel.fromLocalMap(Map<String, dynamic> map) {
+    return QuestionModel(
+      id: map['id'],
+      question: map['question'],
+      options: (map['options'] as String).split(','),
+      answer: map['answer'],
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id' : id,
+      'question': question,
+      'options': options.join(','),
+      'answer': answer,
+    };
+  }
 }

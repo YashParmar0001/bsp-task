@@ -7,6 +7,9 @@ class Assets {
   static const String fontsOpenSansRegular = 'assets/fonts/OpenSans-Regular.ttf';
   static const String fontsOpenSansSemiBold = 'assets/fonts/OpenSans-SemiBold.ttf';
   static const String fontsOpenSansSemiBoldItalic = 'assets/fonts/OpenSans-SemiBoldItalic.ttf';
+  static const String iconsMoney = 'assets/icons/money.svg';
   static const String iconsScore = 'assets/icons/score.png';
+  static const String iconsTick = 'assets/icons/tick.svg';
+  static const String imagesPrize = 'assets/images/prize.png';
 
 }

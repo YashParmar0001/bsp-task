@@ -5,3 +5,13 @@ sealed class QuizEvent {
 }
 
 class FetchQuestions extends QuizEvent {}
+
+class SelectOption extends QuizEvent {
+  const SelectOption(this.option);
+
+  final String option;
+}
+
+class SubmitAnswer extends QuizEvent {}
+
+class ResetData extends QuizEvent {}

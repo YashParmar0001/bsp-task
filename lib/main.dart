@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/bloc/quiz/quiz_bloc.dart';
 import 'package:quiz_app/bloc/user/user_cubit.dart';
+import 'package:quiz_app/router.dart';
 import 'package:quiz_app/theme/colors.dart';
 import 'package:quiz_app/ui/home_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,18 +18,19 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => QuizBloc(),
+          create: (context) => UserCubit(),
         ),
         BlocProvider(
-          create: (context) => UserCubit()..fetchUserData(),
+          create: (context) => QuizBloc(),
         ),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+          scaffoldBackgroundColor: AppColors.scaffoldColor,
           useMaterial3: true,
         ),
-        home: const HomeScreen(),
+        routerConfig: router,
       ),
     );
   }

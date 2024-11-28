@@ -20,11 +20,9 @@ class PrimaryButton extends StatelessWidget {
       onTap: isEnabled ? onPressed : null,
       child: Container(
         width: double.infinity,
+        height: 60,
         margin: const EdgeInsets.symmetric(
           horizontal: 20,
-        ),
-        padding: const EdgeInsets.symmetric(
-          vertical: 20,
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
