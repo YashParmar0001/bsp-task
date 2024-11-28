@@ -34,7 +34,7 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
         _localDbService.storeQuestions(questions);
         emit(
           QuestionsLoaded(
-            questions: questions.sublist(0, 5),
+            questions: questions,
             currentIndex: currentIndex,
             currentScore: currentScore,
           ),
@@ -42,7 +42,7 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
       } else {
         emit(
           QuestionsLoaded(
-            questions: localResult.sublist(0, 5),
+            questions: localResult,
             currentIndex: currentIndex,
             currentScore: currentScore,
           ),
