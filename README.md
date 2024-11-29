@@ -6,9 +6,11 @@ displays the total score at the end of the quiz and handles errors gracefully.
 
 # Screenshots
 
-<img src="github_assets/home.jpg" alt="Register Complaint" width="300">
-<img src="github_assets/quiz.jpg" alt="Register Complaint" width="300">
-<img src="github_assets/complete.jpg" alt="Register Complaint" width="300">
+<div>
+   <img src="github_assets/home.jpg" alt="Register Complaint" width="300">
+   <img src="github_assets/quiz.jpg" alt="Register Complaint" width="300">
+   <img src="github_assets/complete.jpg" alt="Register Complaint" width="300">
+</div>
 
 ## Project Setup
 Follow these steps to run the project locally:
