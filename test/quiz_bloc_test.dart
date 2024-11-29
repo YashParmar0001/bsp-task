@@ -32,10 +32,6 @@ void main() {
     mockSqliteService = MockSqliteService();
   });
 
-  tearDown(() {
-    // quizBloc.close();
-  });
-
   group('QuizBloc Tests', () {
     blocTest<QuizBloc, QuizState>(
       'emits [QuestionsLoading, QuestionsLoaded] when FetchQuestions is successful with API data',
