@@ -4,6 +4,12 @@ This is a Flutter-based quiz application built to fetch quiz questions from a re
 store them locally, and display them to users in an interactive interface. The app calculates and
 displays the total score at the end of the quiz and handles errors gracefully.
 
+# Screenshots
+
+<img src="github_assets/home.jpg" alt="Register Complaint" width="300">
+<img src="github_assets/quiz.jpg" alt="Register Complaint" width="300">
+<img src="github_assets/complete.jpg" alt="Register Complaint" width="300">
+
 ## Project Setup
 Follow these steps to run the project locally:
 
