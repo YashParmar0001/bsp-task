@@ -19,7 +19,6 @@ class QuizApi {
       } else {
         throw Exception('Something went wrong!');
       }
-      return [];
     } catch (e) {
       log('Error: $e');
       rethrow;

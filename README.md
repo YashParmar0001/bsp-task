@@ -1,16 +1,24 @@
-# quiz_app
+# Quiz Application
 
-A new Flutter project.
+This is a Flutter-based quiz application built to fetch quiz questions from a remote API,
+store them locally, and display them to users in an interactive interface. The app calculates and
+displays the total score at the end of the quiz and handles errors gracefully.
 
-## Getting Started
+## Project Setup
+Follow these steps to run the project locally:
 
-This project is a starting point for a Flutter application.
+1. **Clone the repository**:
 
-A few resources to get you started if this is your first Flutter project:
+   ```bash
+   git clone <repository_url>
+   cd <repository_folder>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. **Install dependencies**:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   ```bash
+   flutter pub get
+
+3. **Run the application**:
+
+   ```bash
+   flutter run

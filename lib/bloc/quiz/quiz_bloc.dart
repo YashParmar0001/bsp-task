@@ -13,25 +13,29 @@ part 'quiz_event.dart';
 part 'quiz_state.dart';
 
 class QuizBloc extends Bloc<QuizEvent, QuizState> {
-  QuizBloc() : super(QuizInitial()) {
+  QuizBloc({QuizApi? quizApi, SqliteService? localDbService}) : super(QuizInitial()) {
+    _quizApi = quizApi ?? QuizApi();
+    _localDbService = localDbService ?? SqliteService();
+    log('QuizApi: $_quizApi | local db: $_localDbService');
+
     on<FetchQuestions>(_onFetchQuestions);
     on<SelectOption>(_onSelectOption);
     on<SubmitAnswer>(_onSubmitAnswer);
     on<ResetData>(_onResetData);
   }
 
-  final _quizApi = QuizApi();
-  final _localDbService = SqliteService();
+  QuizApi? _quizApi;
+  SqliteService? _localDbService;
   int currentIndex = 0;
   int currentScore = 0;
 
   void _onFetchQuestions(FetchQuestions event, Emitter<QuizState> emit) async {
     emit(QuestionsLoading());
     try {
-      final localResult = await _localDbService.getQuestions();
+      final localResult = await _localDbService!.getQuestions();
       if (localResult.isEmpty) {
-        final questions = await _quizApi.fetchQuestions();
-        _localDbService.storeQuestions(questions);
+        final questions = await _quizApi!.fetchQuestions();
+        _localDbService!.storeQuestions(questions);
         emit(
           QuestionsLoaded(
             questions: questions,
