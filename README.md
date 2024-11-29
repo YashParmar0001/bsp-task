@@ -22,3 +22,8 @@ Follow these steps to run the project locally:
 
    ```bash
    flutter run
+
+4 **Execute tests**:
+
+   ```bash
+   flutter test
