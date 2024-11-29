@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 import 'package:quiz_app/constants/fields_constants.dart';
 import 'package:quiz_app/model/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -8,15 +9,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
-  UserCubit() : super(UserInitial()) {
-    log('Constructor called');
+  UserCubit({SharedPreferences? sharedPrefs}) : super(UserInitial()) {
+    _sharedPreferences = sharedPrefs;
     fetchUserData();
   }
+
+  SharedPreferences? _sharedPreferences;
 
   void fetchUserData() async {
     log('Fetching user data');
     emit(UserDataLoading());
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = _sharedPreferences ?? await SharedPreferences.getInstance();
     emit(
       UserDataLoaded(
         UserModel(
@@ -28,7 +31,7 @@ class UserCubit extends Cubit<UserState> {
   }
 
   Future<void> updateData({int? score, bool incrementQuizCount = true}) async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = _sharedPreferences ?? await SharedPreferences.getInstance();
     final oldUser = getUser();
     int quizCompleted = oldUser.quizCompleted;
     int newScore = oldUser.score + (score ?? 0);

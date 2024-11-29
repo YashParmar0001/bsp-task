@@ -16,7 +16,7 @@ class MockSqliteService extends Mock implements SqliteService {}
 void main() {
   late MockQuizApi mockQuizApi;
   late MockSqliteService mockSqliteService;
-  late QuizBloc quizBloc;
+
   const dummyQuestion = QuestionModel(
     id: 1,
     question: "What is Flutter?",
@@ -30,10 +30,6 @@ void main() {
     registerFallbackValue(<QuestionModel>[]);
     mockQuizApi = MockQuizApi();
     mockSqliteService = MockSqliteService();
-    quizBloc = QuizBloc(
-      quizApi: mockQuizApi,
-      localDbService: mockSqliteService,
-    );
   });
 
   tearDown(() {
@@ -128,7 +124,7 @@ void main() {
         currentIndex: 0,
         currentScore: 0,
       ),
-      act: (bloc) => bloc.add(SelectOption("SDK")),
+      act: (bloc) => bloc.add(const SelectOption("SDK")),
       expect: () => [
         const QuestionsLoaded(
           questions: [dummyQuestion],

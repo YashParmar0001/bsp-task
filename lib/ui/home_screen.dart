@@ -7,7 +7,6 @@ import 'package:quiz_app/bloc/quiz/quiz_bloc.dart';
 import 'package:quiz_app/bloc/user/user_cubit.dart';
 import 'package:quiz_app/theme/colors.dart';
 import 'package:quiz_app/theme/texts.dart';
-import 'package:quiz_app/ui/quiz/screens/quiz_screen.dart';
 import 'package:quiz_app/ui/widgets/primary_button.dart';
 import 'package:quiz_app/utils/ui_utils.dart';
 

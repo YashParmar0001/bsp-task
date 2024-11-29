@@ -25,7 +25,6 @@ class SqliteService {
   }
 
   Future<List<QuestionModel>> getQuestions() async {
-    print('Getting local questions');
     final db = await initializeDB();
 
     final result = await db.query('questions');

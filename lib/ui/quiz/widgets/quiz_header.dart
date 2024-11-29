@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:quiz_app/bloc/user/user_cubit.dart';
 import 'package:quiz_app/generated/assets.dart';
-import 'package:quiz_app/model/user_model.dart';
 import 'package:quiz_app/theme/colors.dart';
 import 'package:quiz_app/theme/texts.dart';
 

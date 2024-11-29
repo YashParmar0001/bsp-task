@@ -3,7 +3,6 @@ import 'package:quiz_app/bloc/quiz/quiz_bloc.dart';
 import 'package:quiz_app/bloc/user/user_cubit.dart';
 import 'package:quiz_app/router.dart';
 import 'package:quiz_app/theme/colors.dart';
-import 'package:quiz_app/ui/home_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
